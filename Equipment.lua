@@ -2700,7 +2700,7 @@ do
 	]]
 	local function UpdateItemAtLocation(location)
 		local itemLink = GetItemLinkByLocation(location)
-		if not itemLink or not IsEquippableItem(itemLink) then
+		if not itemLink or not C_Item.IsEquippableItem(itemLink) then
 			return
 		end
 
