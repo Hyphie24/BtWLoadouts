@@ -339,7 +339,8 @@ local function IsLocationLocked(location)
 	return locked;
 end
 local function EmptyInventorySlot(inventorySlotId, reason)
-    local itemBagType = GetItemFamily(GetInventoryItemLink("player", inventorySlotId))
+    local itemLink = GetInventoryItemLink("player", inventorySlotId)
+	local itemBagType = itemLink and C_Item.GetItemFamily(itemLink) or 0
 
     local foundSlot = false
     local containerId, slotId
